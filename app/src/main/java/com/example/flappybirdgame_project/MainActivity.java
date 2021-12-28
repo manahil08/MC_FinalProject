@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         this.getWindowManager().getDefaultDisplay().getMetrics(dm);
         Constants.SCREEN_WIDTH=dm.widthPixels;
         Constants.SCREEN_LENGTH=dm.heightPixels;
-        
+
 
 
 
