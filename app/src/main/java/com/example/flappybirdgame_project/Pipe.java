@@ -23,6 +23,7 @@ public class Pipe extends BaseObject {
 
     @Override
     public void setBm(Bitmap bm) {
+
         this.bm=Bitmap.createScaledBitmap(bm,width,height,true);
     }
 }

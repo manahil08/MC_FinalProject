@@ -29,11 +29,13 @@ public class GameView extends View {
     }
     private void initPipe()
     {
-        sumpipe=6;distance=300*Constants.SCREEN_HEIGHT/1920;
+        sumpipe=6;
+        distance=300*Constants.SCREEN_HEIGHT/1920;
         arrPipes=new ArrayList<>();
         for(int i=0; i<sumpipe;i++)
         {
-            if(i<sumpipe/2){
+            if(i<sumpipe/2)
+            {
                 this.arrPipes.add(new Pipe(Constants.SCREEN_WIDTH+i*((Constants.SCREEN_WIDTH+200*Constants.SCREEN_WIDTH/1080)/(sumpipe/2)),0,200*Constants.SCREEN_WIDTH/1080,Constants.SCREEN_HEIGHT/2));
                 this.arrPipes.get(this.arrPipes.size()-1).setBm(BitmapFactory.decodeResource(this.getResources(),R.drawable.pipe2));
                 this.arrPipes.get(this.arrPipes.size()-1).randomY();
@@ -70,7 +72,8 @@ public class GameView extends View {
                 if(i<sumpipe/2){
                     arrPipes.get(i).randomY();
                 }else{
-                    arrPipes.get(i).setY(this.arrPipes.get(i-sumpipe/2).getY()+this.arrPipes.get(i-sumpipe/2).getHeight()+this.distance);
+                    arrPipes.get(i).setY(this.arrPipes.get(i-sumpipe/2).getY()
+                            +this.arrPipes.get(i-sumpipe/2).getHeight()+this.distance);
 
                 }
             }
