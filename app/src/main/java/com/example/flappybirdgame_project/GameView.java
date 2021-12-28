@@ -26,6 +26,6 @@ public class GameView extends View {
     public void draw(Canvas canvas)
     {
         super.draw(canvas);
-
+        bird.draw(canvas);
     }
 }
