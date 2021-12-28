@@ -19,8 +19,10 @@ public class GameView extends View {
     private Runnable r;
     private ArrayList<Pipe> arrPipes;
     private int sumpipe,distance;
+    private int score;
     public GameView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        score=0;
         initBird();
         initPipe();
         handler=new Handler();
@@ -67,13 +69,20 @@ public class GameView extends View {
         bird.draw(canvas);
         for(int i=0; i<sumpipe;i++)
         {
+            if(this.bird.getX()+this.bird.getWidth() > arrPipes.get(i).getX()+arrPipes.get(i).getWidth()/2
+            && this.bird.getX()+this.bird.getWidth() <= arrPipes.get(i).getX()+arrPipes.get(i).getWidth()/2+Pipe.speed
+            && i<sumpipe/2)
+            {
+               score++;
+               MainActivity.txt_score.setText(""+score);
+            }
             if(this.arrPipes.get(i).getX()< -arrPipes.get(i).getWidth()){
                 this.arrPipes.get(i).setX(Constants.SCREEN_WIDTH);
-                if(i<sumpipe/2){
+                if(i < sumpipe/2){
                     arrPipes.get(i).randomY();
                 }else{
                     arrPipes.get(i).setY(this.arrPipes.get(i-sumpipe/2).getY()
-                            +this.arrPipes.get(i-sumpipe/2).getHeight()+this.distance);
+                            +this.arrPipes.get(i-sumpipe/2).getHeight()+ this.distance);
 
                 }
             }

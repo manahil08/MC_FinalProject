@@ -8,10 +8,10 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static TextView txt_score;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        public static TextView txt_score;
+
         super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         DisplayMetrics dm=new DisplayMetrics();
