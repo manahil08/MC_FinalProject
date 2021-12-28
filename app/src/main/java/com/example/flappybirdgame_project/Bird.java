@@ -66,7 +66,7 @@ private ArrayList<Bitmap> arrBms=new ArrayList<>();
         {
             Matrix matrix=new Matrix();
             matrix.postRotate(-25);
-            return Bitmap.createBitmap(arrBms.get(idCurrentBitmap),0,0,arrBms.get(idCurrentBitmap).getWidth(),arrBms.get(idCurrentBitmap).getHeight());
+            return Bitmap.createBitmap(arrBms.get(idCurrentBitmap),0,0,arrBms.get(idCurrentBitmap).getWidth(),arrBms.get(idCurrentBitmap).getHeight(),matrix,true);
         }
         else if(drop>=0)
         {
@@ -77,11 +77,19 @@ private ArrayList<Bitmap> arrBms=new ArrayList<>();
             }else{
                 matrix.postRotate(45);
             }
-            return Bitmap.createBitmap(arrBms.get(idCurrentBitmap),0,0,arrBms.get(idCurrentBitmap).getWidth(),arrBms.get(idCurrentBitmap).getHeight());
+            return Bitmap.createBitmap(arrBms.get(idCurrentBitmap),0,0,arrBms.get(idCurrentBitmap).getWidth(),arrBms.get(idCurrentBitmap).getHeight(),matrix,true);
 
         }
        return this.arrBms.get(idCurrentBitmap);
 
 
+    }
+
+    public float getDrop() {
+        return drop;
+    }
+
+    public void setDrop(float drop) {
+        this.drop = drop;
     }
 }
