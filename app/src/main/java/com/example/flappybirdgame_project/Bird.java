@@ -15,4 +15,12 @@ private ArrayList<Bitmap> arrBms=new ArrayList<>();
     {
 
     }
+
+    public ArrayList<Bitmap> getArrBms() {
+        return arrBms;
+    }
+
+    public void setArrBms(ArrayList<Bitmap> arrBms) {
+        this.arrBms = arrBms;
+    }
 }
