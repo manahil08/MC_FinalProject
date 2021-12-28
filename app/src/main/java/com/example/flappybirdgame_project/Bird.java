@@ -25,7 +25,7 @@ private ArrayList<Bitmap> arrBms=new ArrayList<>();
         this.arrBms = arrBms;
         for(int i=0;i<arrBms.size();i++)
         {
-            this.arrBms.set(i,Bitmap.createScaledBitmap(this.arrBms.get(i),this.width,this.height,true));
+            this.arrBms.set(i, Bitmap.createScaledBitmap(this.arrBms.get(i),this.width,this.height,true));
         }
     }
 
